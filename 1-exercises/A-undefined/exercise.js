@@ -10,11 +10,13 @@
 */
 
 // Example 1
+// value not assigned
 let a;
 console.log(a);
 
 
 // Example 2
+// function does not return anything
 function sayHello() {
     let message = "Hello";
 }
@@ -24,6 +26,7 @@ console.log(hello);
 
 
 // Example 3
+// no parameter is passed to the function
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
@@ -32,5 +35,6 @@ sayHelloToUser();
 
 
 // Example 4
+// array does not have a key with the number 3
 let arr = [1,2,3];
 console.log(arr[3]);
