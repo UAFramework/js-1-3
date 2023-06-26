@@ -11,7 +11,9 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); 
+
+// Parameter "a" is undefined
 
 
 // Example 2
@@ -22,6 +24,8 @@ function sayHello() {
 let hello = sayHello();
 console.log(hello);
 
+// Function doesn't have an input
+
 
 // Example 3
 function sayHelloToUser(user) {
@@ -30,7 +34,10 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+// This time, no value had been given while calling the function
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// Array starts from 0, so the index of last item in array is 2
