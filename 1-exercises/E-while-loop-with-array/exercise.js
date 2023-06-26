@@ -17,7 +17,7 @@ const BIRTHDAYS = [
 ];
 
 function findFirstJulyBDay(birthdays) {
-    // TODO
+  return birthdays.find((x) => /july/i.test(x));
 }
 
 console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
