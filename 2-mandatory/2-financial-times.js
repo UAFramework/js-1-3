@@ -5,7 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let shortestArticles = [];
+    for (let article of allArticleTitles) {
+        if (article.length <= 65) {
+            shortestArticles.push(article);
+        }
+    }
+    return shortestArticles;
 }
 
 /*
@@ -14,7 +20,15 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let articlesLength = [];
+    for (let article of allArticleTitles) {
+        let articleLength = article.length;
+        articlesLength.push(articleLength);
+    }
+
+    let shortestLength = articlesLength.indexOf(Math.min(...articlesLength));
+    let shortestArticle = (allArticleTitles[shortestLength]);
+    return shortestArticle;
 }
 
 /*
@@ -23,7 +37,13 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let numberedArticles = [];
+    for (let article of allArticleTitles) {
+        if (/[0-9]/.test(article)) {
+            numberedArticles.push(article);
+        }
+    }
+    return numberedArticles;
 }
 
 /*
@@ -31,7 +51,12 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let allTheWords = 0;
+    for (let article of allArticleTitles) {
+        allTheWords += article.length;
+    }
+    let averageLength = allTheWords / allArticleTitles.length;
+    return Math.round(averageLength); 
 }
 
 
