@@ -26,6 +26,14 @@ const AGES = [
     49
 ];
 
+function getAgesOfWriters() {
+    let agesOfWriters = [];
+    for (let i = 0; i < WRITERS.length; i++) {
+        agesOfWriters[i] = `${WRITERS[i]} is ${AGES[i]} years old`;
+    }
+    return agesOfWriters;
+}
+console.log(getAgesOfWriters());
 // TODO - Write for loop code here
 
 /*
