@@ -15,6 +15,8 @@
 
 // `getAllFrequencies` goes here
 
+let getAllFrequencies = () => {let frequenciesArray = []; for (i = 87; i < 109; i++) {frequenciesArray.push(i)}; return frequenciesArray};
+
 /**
  * Next, let's write a function that gives us only the frequencies that are radio stations.
  * Call this function `getStations`.
@@ -25,6 +27,17 @@
  * - Return only the frequencies that are radio stations.
  */
 // `getStations` goes here
+
+function getStations () {
+  let frequenciesArray = [];
+  let stationsArray = []; 
+  for (let frequency of getAllFrequencies(frequenciesArray)) {
+    if (isRadioStation(frequency)) {
+      stationsArray.push(frequency);
+    };
+  }
+  return stationsArray;
+};
 
 /*
  * ======= TESTS - DO NOT MODIFY =======
