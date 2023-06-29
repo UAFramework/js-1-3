@@ -33,8 +33,12 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
-function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+function getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS) {
+    let averagePrice = [];
+    for (let i = 0; i < CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length; i++) {
+        averagePrice[i] = +(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i].reduce((sum, current) => sum + current, 0) / CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i].length).toFixed(2);
+    }
+    return averagePrice;
 }
 
 /*
@@ -47,8 +51,12 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
-function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+function getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS) {
+    let priceChange = [];
+    for (let i = 0; i < CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length; i++) {
+        priceChange[i] = +(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i][CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i].length -1] - CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i][0]).toFixed(2);
+    }
+    return priceChange;
 }
 
 /*
@@ -63,8 +71,12 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+function highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS) {
+    let topPrices = [];
+    for (let i = 0; i < CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length; i++) {
+        topPrices[i] = `The highest price of ${STOCKS[i].toUpperCase()} in the last 5 days was ${CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i].sort()[CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length - 1]}`
+    }
+    return topPrices;
 }
 
 
