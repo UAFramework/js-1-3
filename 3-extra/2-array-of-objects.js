@@ -12,12 +12,8 @@
 
 function getHighestRatedInEachGenre(books) {
   var filtered = books.reduce(function(acc, val) {
-      if (val.genre in acc) {
-          if (val.genre === acc[val.genre].genre && val.rating > acc[val.genre].rating) {
-              acc[val.genre] = val;
-          }
-      } else {
-          acc[val.genre] = val;
+    if (!(val.genre in acc) || val.genre === acc[val.genre].genre && val.rating > acc[val.genre].rating) {
+        acc[val.genre] = val;
       }
       return acc;
   }, {});
