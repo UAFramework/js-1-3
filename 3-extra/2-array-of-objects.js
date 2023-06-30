@@ -10,8 +10,30 @@
     Each title in the resulting array should be the highest rated book in its genre.
 */
 
-function getHighestRatedInEachGenre(books) {
-    // TODO
+function getHighestRatedInEachGenre(BOOKS) {
+    let topBooks = [];
+    let booksByGenre = {};
+    for (let book of BOOKS) {
+        if (!booksByGenre[book.genre] || book.rating > booksByGenre[book.genre].rating) {
+        booksByGenre[book.genre] = book;
+        }
+    }
+    for (let genre in booksByGenre) {
+        topBooks.push(booksByGenre[genre].title);
+    }
+    return topBooks;
+    /*let topBooks = [];
+    let sortedByRatingBooks = BOOKS.sort((a, b) => (b.rating - a.rating));
+    for (let book of sortedByRatingBooks) {
+        if (sortedByRatingBooks.find(genre => book.genre = "children")) {
+            topBooks.push(book.title);
+        } else if (sortedByRatingBooks.find(genre => book.genre = "non-fiction")) {
+            topBooks.push(book.title);
+        } else if (sortedByRatingBooks.find(genre => book.genre = "cooking")) {
+            topBooks.push(book.title);
+        }
+    }
+    return topBooks;*/
 }
 
 

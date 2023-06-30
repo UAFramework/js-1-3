@@ -14,7 +14,7 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+    return n <= 2 ? 1 : generateFibonacciSequence(n - 1) + generateFibonacciSequence(n - 2);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
