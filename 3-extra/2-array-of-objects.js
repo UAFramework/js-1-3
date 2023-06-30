@@ -11,6 +11,29 @@
 */
 
 function getHighestRatedInEachGenre(BOOKS) {
+    let sortedBooks = [];
+    sortedBooks.push([]);
+    sortedBooks.push([]);
+    sortedBooks.push([]);
+    for (let i = 0; i < BOOKS.length; i++) {
+        if (BOOKS[i].genre === "children") {
+          sortedBooks[0].push(BOOKS[i]);
+        } else if (BOOKS[i].genre === "non-fiction") {
+          sortedBooks[1].push(BOOKS[i]);
+        } else if (BOOKS[i].genre === "cooking") {
+          sortedBooks[2].push(BOOKS[i]);
+        }
+    }
+    sortedBooks.forEach((genreBooks) => {
+        genreBooks.sort((a, b) => b.rating - a.rating);
+    });
+    let topBooks =[];
+    topBooks.push(sortedBooks[0][0]["title"]);
+    topBooks.push(sortedBooks[1][0]["title"])
+    topBooks.push(sortedBooks[2][0]["title"])
+    return topBooks;
+}
+    /* Just attempts
     let topBooks = [];
     let booksByGenre = {};
     for (let book of BOOKS) {
@@ -21,7 +44,7 @@ function getHighestRatedInEachGenre(BOOKS) {
     for (let genre in booksByGenre) {
         topBooks.push(booksByGenre[genre].title);
     }
-    return topBooks;
+    return topBooks;*/
     /*let topBooks = [];
     let sortedByRatingBooks = BOOKS.sort((a, b) => (b.rating - a.rating));
     for (let book of sortedByRatingBooks) {
@@ -34,7 +57,6 @@ function getHighestRatedInEachGenre(BOOKS) {
         }
     }
     return topBooks;*/
-}
 
 
 /* ======= Book data - DO NOT MODIFY ===== */
