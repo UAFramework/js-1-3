@@ -26,6 +26,12 @@ const AGES = [
     49
 ];
 
+for(let writer in WRITERS) {
+    for ( let age in AGES) {
+        
+    }
+    return "writer years old";
+}
 // TODO - Write for loop code here
 
 /*
