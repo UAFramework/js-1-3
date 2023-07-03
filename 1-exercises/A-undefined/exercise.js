@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+/* a is not indification program did not know what type is variable a*/
 
 
 // Example 2
@@ -21,7 +22,9 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+/* for functions cloning is not working 
+let hello = sayHello(); 
+*/
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +32,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+/* at function sayHelloToUser() when it calls is no argument */
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+/* becouse arr[3] is not at array */
