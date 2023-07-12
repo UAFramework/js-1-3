@@ -9,12 +9,13 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+// Variable a declared, but it hasn't value
 let a;
 console.log(a);
 
 
-// Example 2
+
+// Function does anything there is just declared variable
 function sayHello() {
     let message = "Hello";
 }
@@ -23,7 +24,7 @@ let hello = sayHello();
 console.log(hello);
 
 
-// Example 3
+// Function called without argument
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
@@ -31,6 +32,6 @@ function sayHelloToUser(user) {
 sayHelloToUser();
 
 
-// Example 4
+// This array has the last defined value with index 2, so index 3 - undefined
 let arr = [1,2,3];
 console.log(arr[3]);

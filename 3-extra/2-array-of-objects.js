@@ -10,9 +10,50 @@
     Each title in the resulting array should be the highest rated book in its genre.
 */
 
-function getHighestRatedInEachGenre(books) {
-    // TODO
+function getHighestRatedInEachGenre(allBooks) {
+    let topBooksByGenre = {};
+    let titleTopBooks = [];
+    for (book of allBooks) {
+        if (!topBooksByGenre[book.genre] || topBooksByGenre[book.genre].rating < book.rating) {
+            topBooksByGenre[book.genre] = book;
+        }
+    }
+    for (book of Object.values(topBooksByGenre)) {
+        titleTopBooks.push(book.title);
+    }
+    return titleTopBooks;
 }
+    
+    /*var filtered = books.reduce(function(acc, val) {
+    if (!(val.genre in acc) || val.genre === acc[val.genre].genre && val.rating > acc[val.genre].rating) {
+        acc[val.genre] = val;
+      }
+      return acc;
+  }, {});
+  return Object.entries(filtered).map(([key, value]) => value.title);
+    
+    let sortedBooks = [];
+    sortedBooks.push([]);
+    sortedBooks.push([]);
+    sortedBooks.push([]);
+    for (let i = 0; i < BOOKS.length; i++) {
+        if (BOOKS[i].genre === "children") {
+          sortedBooks[0].push(BOOKS[i]);
+        } else if (BOOKS[i].genre === "non-fiction") {
+          sortedBooks[1].push(BOOKS[i]);
+        } else if (BOOKS[i].genre === "cooking") {
+          sortedBooks[2].push(BOOKS[i]);
+        }
+    }
+    sortedBooks.forEach((genreBooks) => {
+        genreBooks.sort((a, b) => b.rating - a.rating);
+    });
+    let topBooks =[];
+    topBooks.push(sortedBooks[0][0]["title"]);
+    topBooks.push(sortedBooks[1][0]["title"])
+    topBooks.push(sortedBooks[2][0]["title"])
+    return topBooks;
+}*/
 
 
 /* ======= Book data - DO NOT MODIFY ===== */

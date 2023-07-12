@@ -16,8 +16,19 @@ const BIRTHDAYS = [
     "November 15th"
 ];
 
-function findFirstJulyBDay(birthdays) {
-    // TODO
+function filterItems(arr, query) {
+  return arr.filter((el) => el.includes(query));
 }
+console.log(filterItems(BIRTHDAYS, "July").sort()[0]);
 
-console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
+/*function findFirstJulyBDay() {
+    let i = 0;
+    while (i < BIRTHDAYS.length) {
+        i++;
+        if (BIRTHDAYS[i].split(" ")[0] === "July") {
+            return BIRTHDAYS[i];
+        }
+    }
+}*/
+
+//console.log(findFirstJulyBDay()); // should output "July 11th"

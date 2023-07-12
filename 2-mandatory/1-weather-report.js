@@ -10,11 +10,12 @@
             For example, "The temperature in London is 10 degrees"
         - Hint: you can call the temperatureService function from your function
 */
-
+const cities = ['London', 'Paris', 'Barcelona', 'Dubai', 'Mumbai', 'São Paulo', 'Lagos'];
 function getTemperatureReport(cities) {
-    // TODO
+    const citiesWeather = cities.map(city => `The temperature in ${city} is ${temperatureService(city)} degrees`);
+    return citiesWeather;
 }
-
+console.log(getTemperatureReport(cities));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
