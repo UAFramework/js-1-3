@@ -10,27 +10,34 @@
 */
 
 // Example 1
+
+//explanation - variable "a" is not assigned a value, the result will be undefined.
 let a;
 console.log(a);
 
-
 // Example 2
+
+//explanation - sayHello() does not return any value.The sayHello() function is missing a return statement, so we didn't get a Hello value.
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
 
-
 // Example 3
+
+//explanation - we called the sayHelloToUser() function without passing an argument. We should to assign a value to the user argument.
+//If we call the function without a value, we will get undefined
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
 
-
 // Example 4
-let arr = [1,2,3];
+
+//explanation - array indices start at zero (0) and increment by one.
+//The array does not have a fourth element, so its value will be undefined
+let arr = [1, 2, 3];
 console.log(arr[3]);

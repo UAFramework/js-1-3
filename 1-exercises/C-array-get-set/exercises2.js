@@ -7,6 +7,8 @@
 */
 
 let numbers = [1, 2, 3]; // Don't change this array literal declaration
+numbers.push(4); // Assign the number 4 to the end of the array
+numbers[0] = 1; // Change the first value in the array to the number 1
 
 /* 
   DO NOT EDIT BELOW THIS LINE

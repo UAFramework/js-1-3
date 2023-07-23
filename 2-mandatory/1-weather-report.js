@@ -8,56 +8,63 @@
         - take the array of cities as a parameter
         - return an array of strings, which is a statement about the temperature of each city.
             For example, "The temperature in London is 10 degrees"
-        - Hint: you can call the temperatureService function from your function
+        - Hint: you can call the temperatureService function from your function. npm run test
 */
+const cities = [
+  "London",
+  "Paris",
+  "Barcelona",
+  "Dubai",
+  "Mumbai",
+  "São Paulo",
+  "Lagos",
+];
 
+// Function to generate the temperature report for the given locations
 function getTemperatureReport(cities) {
-    // TODO
+  const citiesWeather = cities.map(
+    (city) => `The temperature in ${city} is ${fetchTemperature(city)} degrees`
+  );
+  return citiesWeather;
 }
 
-
+console.log(getTemperatureReport(cities));
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-function temperatureService(city) {
-    let temparatureMap  = new Map();
+// Function to fetch the temperature for a given location
+function fetchTemperature(location) {
+  let temperatureMap = new Map();
 
-    temparatureMap.set('London', 10);
-    temparatureMap.set('Paris', 12);
-    temparatureMap.set('Barcelona', 17);
-    temparatureMap.set('Dubai', 27);
-    temparatureMap.set('Mumbai', 29);
-    temparatureMap.set('São Paulo', 23);
-    temparatureMap.set('Lagos', 33);
-    
-    return temparatureMap.get(city);
+  temperatureMap.set("London", 10);
+  temperatureMap.set("Paris", 12);
+  temperatureMap.set("Barcelona", 17);
+  temperatureMap.set("Dubai", 27);
+  temperatureMap.set("Mumbai", 29);
+  temperatureMap.set("São Paulo", 23);
+  temperatureMap.set("Lagos", 33);
+
+  return temperatureMap.get(location);
 }
 
 test("should return a temperature report for the user's cities", () => {
-    let usersCities = [
-        "London",
-        "Paris",
-        "São Paulo"
-    ]
+  let usersCities = ["London", "Paris", "São Paulo"];
 
-    expect(getTemperatureReport(usersCities)).toEqual([
-        "The temperature in London is 10 degrees",
-        "The temperature in Paris is 12 degrees",
-        "The temperature in São Paulo is 23 degrees"
-    ]);
+  expect(getTemperatureReport(usersCities)).toEqual([
+    "The temperature in London is 10 degrees",
+    "The temperature in Paris is 12 degrees",
+    "The temperature in São Paulo is 23 degrees",
+  ]);
 });
 
 test("should return a temperature report for the user's cities (alternate input)", () => {
-    let usersCities = [
-        "Barcelona",
-        "Dubai"
-    ]
+  let usersCities = ["Barcelona", "Dubai"];
 
-    expect(getTemperatureReport(usersCities)).toEqual([
-        "The temperature in Barcelona is 17 degrees",
-        "The temperature in Dubai is 27 degrees"
-    ]);
+  expect(getTemperatureReport(usersCities)).toEqual([
+    "The temperature in Barcelona is 17 degrees",
+    "The temperature in Dubai is 27 degrees",
+  ]);
 });
 
 test("should return an empty array if the user hasn't selected any cities", () => {
-    expect(getTemperatureReport([])).toEqual([]);
+  expect(getTemperatureReport([])).toEqual([]);
 });

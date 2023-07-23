@@ -5,11 +5,11 @@
 */
 
 function first(arr) {
-  return; // complete this statement
+  return arr[0]; // The first element is at index 0
 }
 
 function last(arr) {
-  return; // complete this statement
+  return arr[arr.length - 1]; // The last element is at index arr.length - 1
 }
 
 /* 
