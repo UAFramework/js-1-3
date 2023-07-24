@@ -5,6 +5,9 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
+    const result = allArticleTitles.filter(article => article.length < 65);
+        return result;
+
     // TODO
 }
 
@@ -14,8 +17,17 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+       for ( let article of allArticleTitles) {
+        if( countWords(article) < 6) {
+        return article;
+    }
 }
+}
+function countWords(str) {
+    return str.trim().split(/\s+/).length;
+}
+    // TODO
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
