@@ -5,6 +5,9 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
+    const result = allArticleTitles.filter(article => article.length < 65);
+        return result;
+
     // TODO
 }
 
@@ -14,8 +17,17 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+       for (let article of allArticleTitles) {
+        if(countWords(article) < 7) {
+        return article;
+    }
 }
+}
+function countWords(str) {
+    return str.trim().split(/\s+/).length;
+}
+    // TODO
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -23,6 +35,7 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
+    return allArticleTitles.filter(title => (/\d/.test(title)));
     // TODO
 }
 
@@ -30,8 +43,13 @@ function headlinesWithNumbers(allArticleTitles) {
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
-function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+function averageNumberOfCharacters(_allArticleTitles) {
+    let total = 0;
+    for(var i = 0; i < ARTICLE_TITLES.length; i++){
+        total+=ARTICLE_TITLES[i].length;
+    }
+    let average = total/ARTICLE_TITLES.length;
+    return Math.round(average);
 }
 
 

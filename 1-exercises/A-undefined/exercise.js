@@ -10,27 +10,28 @@
 */
 
 // Example 1
-let a;
-console.log(a);
+let a = 3;
+console.log(a); //We have key but have not value, that is why we received undefined. When we giving some value to key we receive value output in most case
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello";//function have not argument
 }
 
-let hello = sayHello();
-console.log(hello);
+let hello = sayHello(); //function have not argument
+console.log(sayHello);
 
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+    console.log(`Hello ${'user'}`);
 }
 
-sayHelloToUser();
+sayHelloToUser(Ku);// not right order to read 
 
 
 // Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+function arr()
+let arr = [1, 2, 3];
+console.log(arr[3]);//arrow has not index 3
