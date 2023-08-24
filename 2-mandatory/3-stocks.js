@@ -34,18 +34,21 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    let averagePrices = [];
-    sum = 0;
-    closingPricesForAllStocks.forEach((element) => {
-    sum += element;
-  });
-  return sum / closingPricesForAllStocks.length;
-  
-  
+    let averages = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+        let sum = 0;
+        for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
+         sum += closingPricesForAllStocks[i][j];
+      }
 
-
-    // TODO
+      let average = sum / closingPricesForAllStocks[i].length;
+      averages.push(+average.toFixed(2));
+   }
+   return averages;
+    
+        // TODO
 }
+
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -58,7 +61,12 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let changesPrice = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+        changesPrice.push(+(closingPricesForAllStocks[i][4] - closingPricesForAllStocks[i][0]).toFixed(2));
+        
+    }
+        return changesPrice;
 }
 
 /*
@@ -73,9 +81,22 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
+
+function highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS) {
+    let maxPrices = [];
+    for (let i = 0; i < CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length; i++) {
+        let upperCaseStock = STOCKS[i].toUpperCase();
+        let maxPrice = Math.max(...CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i]);
+        maxPrices.push(`The highest price of ${upperCaseStock} in the last 5 days was ${maxPrice.toFixed(2)}`);
+        
+    }            
+       
+    return maxPrices;
     // TODO
 }
+
+    
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
